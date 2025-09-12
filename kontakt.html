@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kontakt — Agaled Studio | Begär offert</title>
+  <meta name="description" content="Kontakta oss för webbdesign, frontend och SEO. Berätta om mål, tidplan och budget så återkommer vi snabbt med förslag." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+</head>
+<body>
+
+<!-- HEADER (samma, men 'Kontakt' aktiv) -->
+<header class="topbar">
+  <div class="container inner">
+    <a href="index.html" class="logo">
+      <span class="badge" aria-hidden="true"></span>
+      <span class="logo-text">Agaled <b>Studio</b></span>
+    </a>
+    <nav class="nav" id="nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Öppna meny</span>☰
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="tjanster.html">Tjänster</a></li>
+        <li><a href="case.html">Case</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="om-oss.html">Om oss</a></li>
+        <li><a href="kontakt.html" class="btn btn--small btn--primary active">Begär offert</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Kontakt</p>
+    <h1 class="headline">Berätta om ert <span class="gradient">projekt</span></h1>
+    <p class="lead">Fyll i formuläret så återkommer vi med förslag, tidplan och uppskattning.</p>
+  </div>
+</section>
+
+<!-- FORMULÄR -->
+<section>
+  <div class="container">
+    <div class="card form">
+      <!-- Byt e-postadressen nedan till din -->
+      <form id="kontaktForm" action="mailto:AghiedJalbout@gmail.com" method="post" enctype="text/plain">
+        <div class="grid-2">
+          <div>
+            <label for="namn">Namn</label>
+            <input id="namn" name="Namn" required />
+          </div>
+          <div>
+            <label for="epost">E-post</label>
+            <input id="epost" name="E-post" type="email" required />
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <label for="foretag">Företag (valfritt)</label>
+            <input id="foretag" name="Företag" />
+          </div>
+          <div>
+            <label for="budget">Budget (intervall)</label>
+            <input id="budget" name="Budget" placeholder="t.ex. 20–60 000 kr" />
+          </div>
+        </div>
+
+        <div>
+          <label for="tidsplan">Tidsplan</label>
+          <input id="tidsplan" name="Tidsplan" placeholder="t.ex. start i oktober, lansering i december" />
+        </div>
+
+        <div>
+          <label for="beskrivning">Kort beskrivning</label>
+          <textarea id="beskrivning" name="Beskrivning" rows="6" placeholder="Mål, målgrupp, funktioner som krävs ..." required></textarea>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <label for="tjanst">Intresserad av</label>
+            <input id="tjanst" name="Intresserad av" placeholder="Webbdesign / Frontend / SEO / Headless ..." />
+          </div>
+          <div>
+            <label for="url">Nuvarande webb (valfritt)</label>
+            <input id="url" name="Nuvarande webb" type="url" placeholder="https://dittdomän.se" />
+          </div>
+        </div>
+
+        <button class="btn btn--primary" type="submit">Skicka förfrågan</button>
+      </form>
+      <p class="muted small" style="margin-top:10px">
+        Eller maila oss direkt: <a href="mailto:AghiedJalbout@gmail.com">AghiedJalbout@gmail.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ-snabb -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Vanliga frågor</h2>
+    <div class="grid-2">
+      <article class="card">
+        <h3>Hur snabbt kan vi starta?</h3>
+        <p>Ofta inom 1–2 veckor. Snabbare starter är möjliga beroende på scope.</p>
+      </article>
+      <article class="card">
+        <h3>Jobbar ni fast pris eller löpande?</h3>
+        <p>Båda. Vi kan paketera fasta leverabler eller köra löpande med tydlig rapportering.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container foot">
+    <p class="muted small">© <span id="year"></span> Agaled Studio • Stockholm</p>
+    <nav class="foot-nav">
+      <a href="priser.html">Priser</a>
+      <a href="seo-webbdesign.html">SEO & Prestanda</a>
+      <a href="tillganglighet.html">Tillgänglighet</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Meny + år
+  const toggler = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.nav-menu');
+  if (toggler && menu) {
+    toggler.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      toggler.setAttribute('aria-expanded', String(open));
+    });
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Enkel validering (klient) innan mailto triggas
+  document.getElementById('kontaktForm').addEventListener('submit', function(e){
+    const required = ['namn','epost','beskrivning'];
+    for (const id of required){
+      const el = document.getElementById(id);
+      if (!el.value.trim()){
+        e.preventDefault();
+        alert('Fyll i alla obligatoriska fält.');
+        el.focus();
+        return false;
+      }
+    }
+    // Tips: byt action till din riktiga e-post ovan.
+  });
+</script>
+</body>
+</html>

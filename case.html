@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case — Agaled Studio | Webbbyrå & Webbdesign</title>
+  <meta name="description" content="Utvalda projekt inom webbdesign, frontend, SEO och prestanda. Resultat som driver affär." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+</head>
+<body>
+
+<!-- HEADER (samma som i index.html, men 'Case' aktiv) -->
+<header class="topbar">
+  <div class="container inner">
+    <a href="index.html" class="logo">
+      <span class="badge" aria-hidden="true"></span>
+      <span class="logo-text">Agaled <b>Studio</b></span>
+    </a>
+    <nav class="nav" id="nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Öppna meny</span>☰
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="tjanster.html">Tjänster</a></li>
+        <li><a href="case.html" class="active">Case</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="om-oss.html">Om oss</a></li>
+        <li><a href="kontakt.html" class="btn btn--small btn--primary">Begär offert</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Portfolio</p>
+    <h1 class="headline">Utvalda case & <span class="gradient">resultat</span></h1>
+    <p class="lead">Ett urval av projekt där vi förbättrat konvertering, prestanda och upplevelse.</p>
+  </div>
+</section>
+
+<!-- CASE KORT (snabb översikt) -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Snabb översikt</h2>
+    <div class="grid-3 projects">
+      <a class="project card" href="#ehandel">
+        <div class="thumb">E-handel</div>
+        <div class="meta">
+          <h3>+38% konvertering</h3>
+          <p class="muted">React • Headless • A/B-test</p>
+        </div>
+      </a>
+      <a class="project card" href="#saas">
+        <div class="thumb">SaaS</div>
+        <div class="meta">
+          <h3>99/100 performance</h3>
+          <p class="muted">Vite • Bildoptimering</p>
+        </div>
+      </a>
+      <a class="project card" href="#kommun">
+        <div class="thumb">Offentlig</div>
+        <div class="meta">
+          <h3>WCAG AA</h3>
+          <p class="muted">Designsystem • Audit</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 1: E-handel -->
+<section id="ehandel">
+  <div class="container grid-2">
+    <div>
+      <h2 class="section-title">E-handel — +38% konvertering</h2>
+      <p class="lead">Moderniserad produktvy, snabbare laddtider och tydligare köpresa.</p>
+      <ul class="bullets">
+        <li>Komponentbaserad front i React</li>
+        <li>Headless CMS för innehåll</li>
+        <li>A/B-test av checkout (kortare flöde)</li>
+      </ul>
+      <p><a class="btn" href="kontakt.html">Be om genomgång</a></p>
+    </div>
+    <div class="card hero-card">
+      <div class="mock">
+        <div class="mock-bar"></div>
+        <div class="mock-body">
+          <div class="mock-col">
+            <div class="mock-block"></div>
+            <div class="mock-block small"></div>
+            <div class="mock-block"></div>
+          </div>
+          <div class="mock-col">
+            <div class="mock-block tall"></div>
+          </div>
+        </div>
+      </div>
+      <p class="muted center">Fokus: produktkort, bildoptimering, checkout</p>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 2: SaaS -->
+<section id="saas">
+  <div class="container grid-2">
+    <div>
+      <h2 class="section-title">SaaS — 99/100 i Lighthouse Performance</h2>
+      <p class="lead">Trimning av bundle, lazy loading och bättre LCP/FID/CLS.</p>
+      <ul class="bullets">
+        <li>Vite-baserad byggkedja</li>
+        <li>Code-splitting & preloading</li>
+        <li>Automatiserade performance-tester</li>
+      </ul>
+      <p><a class="btn" href="kontakt.html">Be om prestandareview</a></p>
+    </div>
+    <div class="card hero-card">
+      <div class="mock">
+        <div class="mock-bar"></div>
+        <div class="mock-body">
+          <div class="mock-col">
+            <div class="mock-block"></div>
+            <div class="mock-block small"></div>
+            <div class="mock-block"></div>
+          </div>
+          <div class="mock-col">
+            <div class="mock-block tall"></div>
+          </div>
+        </div>
+      </div>
+      <p class="muted center">Fokus: CWV, bildoptimering, caching</p>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 3: Kommun/Offentlig -->
+<section id="kommun">
+  <div class="container grid-2">
+    <div>
+      <h2 class="section-title">Kommunwebb — WCAG AA & designsystem</h2>
+      <p class="lead">Tillgänglighetsgranskning, tydlig IA och komponentbibliotek.</p>
+      <ul class="bullets">
+        <li>WCAG-audit & åtgärdsplan</li>
+        <li>Designsystem för enhetlighet</li>
+        <li>Utbildning & dokumentation</li>
+      </ul>
+      <p><a class="btn" href="kontakt.html">Be om WCAG-audit</a></p>
+    </div>
+    <div class="card hero-card">
+      <div class="mock">
+        <div class="mock-bar"></div>
+        <div class="mock-body">
+          <div class="mock-col">
+            <div class="mock-block"></div>
+            <div class="mock-block small"></div>
+            <div class="mock-block"></div>
+          </div>
+          <div class="mock-col">
+            <div class="mock-block tall"></div>
+          </div>
+        </div>
+      </div>
+      <p class="muted center">Fokus: tillgänglighet, struktur, komponenter</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="container center">
+    <h2 class="section-title">Vill du se ett case live?</h2>
+    <p class="lead">Vi visar gärna demo, mätningar och arbetsflöde.</p>
+    <p><a class="btn btn--primary" href="kontakt.html">Boka genomgång</a></p>
+  </div>
+</section>
+
+<!-- FOOTER (samma som i index.html) -->
+<footer class="footer">
+  <div class="container foot">
+    <p class="muted small">© <span id="year"></span> Agaled Studio • Stockholm</p>
+    <nav class="foot-nav">
+      <a href="priser.html">Priser</a>
+      <a href="seo-webbdesign.html">SEO & Prestanda</a>
+      <a href="tillganglighet.html">Tillgänglighet</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Meny + år
+  const toggler = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.nav-menu');
+  if (toggler && menu) {
+    toggler.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      toggler.setAttribute('aria-expanded', String(open));
+    });
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
