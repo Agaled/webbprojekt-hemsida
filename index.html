@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agaled Studio — Webbbyrå & Frontend</title>
+  <meta name="description" content="Agaled Studio är en modern webbbyrå som designar och utvecklar snabba, tillgängliga och konverterande webblösningar." />
+  <meta name="theme-color" content="#0b0f19" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  <meta property="og:title" content="Agaled Studio — Webbbyrå & Frontend" />
+  <meta property="og:description" content="Design & utveckling av webbar som känns premium och presterar." />
+  <meta property="og:type" content="website" />
+
+  <!-- Strukturerad data (valfritt, bra för SEO) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Agaled Studio",
+      "url": "https://example.com",
+      "logo": "https://example.com/logo.png",
+      "sameAs": [],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "hello@example.com",
+        "areaServed": "SE"
+      }]
+    }
+  </script>
+</head>
+<body>
+
+<!-- Topbar -->
+<header class="topbar">
+  <div class="container inner">
+    <a href="#" class="logo">
+      <span class="badge" aria-hidden="true"></span>
+      <span class="logo-text">Agaled <b>Studio</b></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Öppna meny</span>
+        ☰
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#tjanster">Tjänster</a></li>
+        <li><a href="#case">Case</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#om">Om oss</a></li>
+        <li><a href="#kontakt" class="btn btn--small btn--primary">Begär offert</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container grid-2">
+    <div class="hero-copy">
+      <p class="eyebrow">Webbbyrå • UI/UX • Frontend</p>
+      <h1 class="headline">
+        Premium hemsidor som <span class="gradient">konverterar</span> och laddar <span class="gradient">blixtsnabbt</span>.
+      </h1>
+      <p class="lead">
+        Vi designar och utvecklar moderna webbar med fokus på affärsmål, SEO, tillgänglighet och prestanda.
+      </p>
+      <div class="cta">
+        <a class="btn btn--primary" href="#kontakt">Starta projekt</a>
+        <a class="btn" href="#case">Se våra case</a>
+      </div>
+
+      <ul class="trust">
+        <li>⚡ Lighthouse 95+ </li>
+        <li>♿ WCAG AA</li>
+        <li>📈 SEO-redo</li>
+      </ul>
+    </div>
+
+    <div class="hero-card card">
+      <div class="mock">
+        <div class="mock-bar"></div>
+        <div class="mock-body">
+          <div class="mock-col">
+            <div class="mock-block"></div>
+            <div class="mock-block small"></div>
+            <div class="mock-block"></div>
+          </div>
+          <div class="mock-col">
+            <div class="mock-block tall"></div>
+          </div>
+        </div>
+      </div>
+      <p class="muted center">Interaktiv prototyp • Responsiv layout • Komponentbaserat</p>
+    </div>
+  </div>
+</section>
+
+<!-- Tjänster -->
+<section id="tjanster">
+  <div class="container">
+    <h2 class="section-title">Vad vi gör</h2>
+    <p class="lead">End-to-end från strategi till lansering – eller hoppa in där du behöver oss.</p>
+
+    <div class="cards">
+      <article class="card service">
+        <h3>Design & UX</h3>
+        <p>Research, wireframes och pixelperfekta UI-kit. Fokus på konvertering och tydlig brand-känsla.</p>
+        <ul class="bullets">
+          <li>Designsystem & komponenter</li>
+          <li>Prototyper i Figma</li>
+          <li>Micro-copy & innehållsstöd</li>
+        </ul>
+      </article>
+
+      <article class="card service">
+        <h3>Frontend & CMS</h3>
+        <p>Snabb, tillgänglig och skalbar kod. Headless-CMS eller statiska sajter – du väljer.</p>
+        <ul class="bullets">
+          <li>HTML/CSS/JS, React/Vite</li>
+          <li>Headless (Sanity/Strapi)</li>
+          <li>CI/CD & GitHub Pages</li>
+        </ul>
+      </article>
+
+      <article class="card service">
+        <h3>SEO & Prestanda</h3>
+        <p>Teknisk SEO, mätning och optimering för 95+ i Lighthouse samt Core Web Vitals-mål.</p>
+        <ul class="bullets">
+          <li>Schema/OG-taggar</li>
+          <li>Bild-/fontoptimering</li>
+          <li>Analys & dashboards</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Case -->
+<section id="case">
+  <div class="container">
+    <h2 class="section-title">Utvalda case</h2>
+    <div class="grid-3 projects">
+      <a class="project card" href="#" aria-label="Case 1">
+        <div class="thumb" aria-hidden="true">Case 1</div>
+        <div class="meta"><h3>E-handel som ökade konvertering +38%</h3><p class="muted">React • Headless • A/B</p></div>
+      </a>
+      <a class="project card" href="#" aria-label="Case 2">
+        <div class="thumb">Case 2</div>
+        <div class="meta"><h3>SaaS-landning med 99/100 performance</h3><p class="muted">Vite • Image opt • SEO</p></div>
+      </a>
+      <a class="project card" href="#" aria-label="Case 3">
+        <div class="thumb">Case 3</div>
+        <div class="meta"><h3>Kommunwebb med WCAG AA</h3><p class="muted">Designsystem • Audit</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process">
+  <div class="container">
+    <h2 class="section-title">Så jobbar vi</h2>
+    <ol class="timeline">
+      <li><span>1</span> Kickoff & målbild</li>
+      <li><span>2</span> UX/Design & prototyper</li>
+      <li><span>3</span> Kod & integrationer</li>
+      <li><span>4</span> Test, SEO & prestanda</li>
+      <li><span>5</span> Lansering & lärande</li>
+    </ol>
+  </div>
+</section>
+
+<!-- Om / USP -->
+<section id="om">
+  <div class="container grid-2">
+    <div>
+      <h2 class="section-title">Varför Agaled Studio?</h2>
+      <ul class="ticks">
+        <li>Senior erfarenhet i små, snabba team</li>
+        <li>Designsystem & komponentbibliotek för återanvändbarhet</li>
+        <li>Process med mätbara mål — inte bara “snyggt”</li>
+      </ul>
+    </div>
+    <div class="stats card">
+      <div><strong>95+</strong><span>Lighthouse</span></div>
+      <div><strong>50%</strong><span>Snabbare laddtid</span></div>
+      <div><strong>200ms</strong><span>TTI på kritiska vyer</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Kontakt -->
+<section id="kontakt">
+  <div class="container">
+    <h2 class="section-title">Berätta om ditt projekt</h2>
+    <form class="card form" name="kontakt" method="post" data-netlify="true">
+      <div class="grid-2">
+        <div>
+          <label for="namn">Namn</label>
+          <input id="namn" name="namn" required />
+        </div>
+        <div>
+          <label for="epost">E-post</label>
+          <input id="epost" type="email" name="epost" required />
+        </div>
+      </div>
+      <div>
+        <label for="meddelande">Beskriv uppdraget</label>
+        <textarea id="meddelande" name="meddelande" rows="5" placeholder="Budget, tidplan, mål..."></textarea>
+      </div>
+      <button class="btn btn--primary" type="submit">Skicka förfrågan</button>
+    </form>
+    <p class="center muted small">Eller maila: <a href="mailto:hello@example.com">hello@example.com</a></p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container foot">
+    <p class="muted small">© <span id="year"></span> Agaled Studio • Stockholm</p>
+    <nav class="foot-nav">
+      <a href="#tjanster">Tjänster</a>
+      <a href="#case">Case</a>
+      <a href="#process">Process</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Mobilt meny-toggle
+  const toggler = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.nav-menu');
+  if (toggler && menu) {
+    toggler.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      toggler.setAttribute('aria-expanded', String(open));
+    });
+  }
+  // År i footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
