@@ -305,11 +305,8 @@ input:focus, textarea:focus, select:focus{
   box-shadow:0 0 0 3px rgba(124,58,237,.25);
 }
 
-
-
-
 .logo-img {
-  height: 200px;      /* justera storlek */
+  height: 170px;      /* justera storlek */
   width: auto;
   display: block;
 }
