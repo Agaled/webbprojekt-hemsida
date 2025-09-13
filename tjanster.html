@@ -3,20 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tjänster — Agaled Studio | Webbbyrå & Webbdesign</title>
-  <meta name="description" content="Våra tjänster inom webbdesign, frontend, SEO och prestanda. Skräddarsydda, snabba och tillgängliga webblösningar." />
+  <title>Tjänster — WebbBoost</title>
+  <meta name="description" content="WebbBoost erbjuder webbdesign och webbutveckling i WordPress eller kod från grunden, e-handel, SEO, design, UX och support. Läs mer om våra tjänster." />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <meta name="msapplication-TileImage" content="assets/favicon.png">
+
 </head>
 <body>
 
-<!-- HEADER (samma som i index.html) -->
+<!-- HEADER -->
 <header class="topbar">
   <div class="container inner">
     <a href="index.html" class="logo">
-      <span class="badge" aria-hidden="true"></span>
-      <span class="logo-text">Agaled <b>Studio</b></span>
+      <img src="assets/logo.png" alt="WebbBoost Studio logotyp" class="logo-img">
     </a>
+
     <nav class="nav" id="nav">
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
         <span class="sr-only">Öppna meny</span>☰
@@ -32,102 +38,102 @@
   </div>
 </header>
 
-<!-- HERO / INTRO -->
+<!-- HERO -->
 <section class="hero">
   <div class="container">
     <p class="eyebrow">Våra tjänster</p>
-    <h1 class="headline">Webbdesign, frontend och <span class="gradient">resultat</span>.</h1>
-    <p class="lead">Vi kombinerar UX, modern kod och teknisk SEO för att bygga snabba, tillgängliga och konverterande webbar.</p>
+    <h1 class="headline">Webbdesign & utveckling som <span class="gradient">ger resultat</span></h1>
+    <p class="lead">Vi skapar hemsidor och digitala lösningar som är snabba, snygga och anpassade för din verksamhet.</p>
   </div>
 </section>
 
-<!-- KORTA KORT (3 kolumner) -->
+<!-- TJÄNSTER -->
 <section>
   <div class="container">
-    <h2 class="section-title">Kärnerbjudanden</h2>
-    <div class="cards">
-      <article class="card service" id="designux">
-        <h3>Design & UX</h3>
-        <p>Research, wireframes och pixelperfekta gränssnitt. Prototyper i Figma innan vi skriver kod.</p>
-        <ul class="bullets">
-          <li>Designsystem & komponenter</li>
-          <li>Prototyper & användningstester</li>
-          <li>Copy & innehållsstruktur</li>
-        </ul>
-      </article>
+    <h2 class="section-title">Vad vi erbjuder</h2>
 
-      <article class="card service" id="frontend">
-        <h3>Frontend & CMS</h3>
-        <p>Snabb, tillgänglig och skalbar kod. Headless-CMS vid behov, annars statisk för maximal prestanda.</p>
-        <ul class="bullets">
-          <li>HTML/CSS/JS, React/Vite</li>
-          <li>Headless (Sanity/Strapi)</li>
-          <li>CI/CD & GitHub Pages</li>
-        </ul>
-      </article>
+    <article class="card" id="wordpress">
+      <h3>Webbplatser i WordPress</h3>
+      <p><strong>WordPress</strong> är världens mest använda CMS – och med rätt kompetens blir det både flexibelt, snabbt och säkert.</p>
+      <p>Vi bygger allt från enkla företagssajter till avancerade portaler med specialfunktioner. Du får ett lättskött system där du själv kan uppdatera texter, bilder och nyheter.</p>
+      <ul class="bullets">
+        <li>Anpassade teman och design</li>
+        <li>Byggt för hastighet och säkerhet</li>
+        <li>Lätt att administrera själv</li>
+      </ul>
+    </article>
 
-      <article class="card service" id="seo">
-        <h3>SEO & Prestanda</h3>
-        <p>Teknisk SEO och Core Web Vitals. Vi mäter och förbättrar tills sidan flyger.</p>
-        <ul class="bullets">
-          <li>Schema/OG-taggar</li>
-          <li>Bild- och fontoptimering</li>
-          <li>Rapporter & rekommendationer</li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
+    <article class="card" id="kod">
+      <h3>Skräddarsydd kod</h3>
+      <p>Ibland räcker inte WordPress till. Då bygger vi istället med <strong>egen kod från grunden</strong> – i moderna ramverk och med full kontroll över prestanda.</p>
+      <p>Det ger en unik lösning som kan växa i takt med din verksamhet. Perfekt för företag som har särskilda behov eller vill ha något helt unikt.</p>
+      <ul class="bullets">
+        <li>Full flexibilitet</li>
+        <li>Högsta möjliga prestanda</li>
+        <li>Komplett kontroll över funktionalitet</li>
+      </ul>
+    </article>
 
-<!-- FÖRDJUPNING / PAKET -->
-<section>
-  <div class="container">
-    <h2 class="section-title">Paket & leverabler</h2>
-    <div class="grid-3">
-      <article class="card">
-        <h3>Start — Landningssida</h3>
-        <p class="muted">För snabba kampanjer och tydlig konvertering.</p>
-        <ul class="bullets">
-          <li>1–3 sektioner + formulär</li>
-          <li>Grundläggande SEO</li>
-          <li>Publicering via GitHub Pages</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>Business — Företagssajt</h3>
-        <p class="muted">Flera sidor, case och innehåll som växer med dig.</p>
-        <ul class="bullets">
-          <li>Flersidig struktur</li>
-          <li>Komponentbibliotek</li>
-          <li>Prestandabudget (95+)</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>Scale — Headless</h3>
-        <p class="muted">Innehåll i CMS, integrationer och hög skalbarhet.</p>
-        <ul class="bullets">
-          <li>Sanity/Strapi</li>
-          <li>SEO-workflows</li>
-          <li>CI/CD & staging</li>
-        </ul>
-      </article>
-    </div>
+    <article class="card" id="ehandel">
+      <h3>E-handel & WooCommerce</h3>
+      <p>Vill du sälja online? Vi bygger <strong>e-handel i WooCommerce</strong> eller skräddarsydda lösningar för just din affärsidé.</p>
+      <p>Vi fokuserar på smidiga köpflöden, trygg betalning och enkel hantering för dig som butikägare. Resultatet blir en butik som konverterar fler besökare till kunder.</p>
+      <ul class="bullets">
+        <li>Säker betalning och kassaoptimering</li>
+        <li>Integrationer med betaltjänster och logistik</li>
+        <li>Anpassning för både B2C och B2B</li>
+      </ul>
+    </article>
+
+    <article class="card" id="seo">
+      <h3>SEO & Prestanda</h3>
+      <p>En snygg hemsida är bara värdefull om den hittas. Därför arbetar vi med <strong>SEO och prestandaoptimering</strong> i varje projekt.</p>
+      <p>Vi ser till att din sida laddar snabbt, har rätt teknisk struktur och syns på Google. Resultatet blir fler besökare och fler kunder.</p>
+      <ul class="bullets">
+        <li>On-page SEO (titlar, struktur, metadata)</li>
+        <li>Core Web Vitals-optimering</li>
+        <li>Tekniska förbättringar som ger långsiktiga resultat</li>
+      </ul>
+    </article>
+
+    <article class="card" id="design">
+      <h3>Design & UX</h3>
+      <p>Vi designar med användaren i fokus. Varje detalj – färger, typsnitt, layouter – väljs för att skapa en positiv upplevelse och driva konvertering.</p>
+      <p>Våra designer är responsiva och fungerar lika bra på mobil, surfplatta och dator.</p>
+      <ul class="bullets">
+        <li>Användarcentrerad designprocess</li>
+        <li>Modern visuell stil</li>
+        <li>Responsivt i alla enheter</li>
+      </ul>
+    </article>
+
+    <article class="card" id="support">
+      <h3>Support & underhåll</h3>
+      <p>En hemsida behöver hållas uppdaterad för att vara säker och fungera på lång sikt. Vi erbjuder <strong>support och underhåll</strong> som gör att du slipper oroa dig.</p>
+      <p>Du kan välja olika nivåer av support beroende på ditt behov – från enklare uppdateringar till fullserviceavtal.</p>
+      <ul class="bullets">
+        <li>Säkerhetsuppdateringar</li>
+        <li>Löpande förbättringar</li>
+        <li>Personlig support</li>
+      </ul>
+    </article>
+
   </div>
 </section>
 
 <!-- CTA -->
 <section>
   <div class="container center">
-    <h2 class="section-title">Behöver du något skräddarsytt?</h2>
-    <p class="lead">Berätta om mål, målgrupp och tidplan så tar vi fram ett förslag.</p>
-    <p><a class="btn btn--primary" href="kontakt.html">Begär offert</a></p>
+    <h2 class="section-title">Redo att ta nästa steg?</h2>
+    <p class="lead">Vi erbjuder alltid kostnadsfri konsultation och offert. Kontakta oss så pratar vi om just ditt projekt.</p>
+    <p><a class="btn btn--primary" href="kontakt.html">Kontakta oss</a></p>
   </div>
 </section>
 
-<!-- FOOTER (samma som i index.html) -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container foot">
-    <p class="muted small">© <span id="year"></span> Agaled Studio • Stockholm</p>
+    <p class="muted small">© <span id="year"></span> WebbBoost • Stockholm</p>
     <nav class="foot-nav">
       <a href="priser.html">Priser</a>
       <a href="seo-webbdesign.html">SEO & Prestanda</a>
@@ -138,7 +144,7 @@
 </footer>
 
 <script>
-  // Mobilt meny-toggle + år (samma som index)
+  // Meny + år
   const toggler = document.querySelector('.nav-toggle');
   const menu = document.querySelector('.nav-menu');
   if (toggler && menu) {

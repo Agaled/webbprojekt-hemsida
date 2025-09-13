@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FAQ — WebbBoost | Vanliga frågor</title>
+    <meta name="description" content="Vanliga frågor och svar om webbdesign, priser, tidsplaner, WordPress, kod från noll och underhåll." />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/favicon.png">
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="topbar">
+    <div class="container inner">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="WebbBoost Studio logotyp" class="logo-img">
+        </a>
+
+        <nav class="nav" id="nav">
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+                <span class="sr-only">Öppna meny</span>☰
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="tjanster.html">Tjänster</a></li>
+                <li><a href="case.html">Case</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="om-oss.html">Om oss</a></li>
+                <li><a href="kontakt.html" class="btn btn--small btn--primary">Begär offert</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <p class="eyebrow">Vanliga frågor</p>
+        <h1 class="headline">FAQ — <span class="gradient">svar direkt</span></h1>
+        <p class="lead">Här hittar du svar på de vanligaste frågorna vi får om webbdesign, priser, teknik och support.</p>
+    </div>
+</section>
+
+<!-- FAQ GRID -->
+<section>
+    <div class="container">
+        <div class="grid-2">
+            <article class="card">
+                <h3>Hur lång tid tar en webb?</h3>
+                <p>En landningssida: 1–2 veckor. En full företagssajt: 3–6 veckor. Större projekt (e-handel/headless) kan ta 6–10 veckor beroende på omfattning.</p>
+            </article>
+            <article class="card">
+                <h3>Jobbar ni med WordPress?</h3>
+                <p>Ja, vi bygger både i WordPress (med block/redigerare) och helt från noll. Vi väljer lösning efter ditt behov.</p>
+            </article>
+            <article class="card">
+                <h3>Vad kostar en hemsida?</h3>
+                <p>Startpaket från 7 900 kr, företagssajt från 19 900 kr och e-handel från 29 900 kr. Se <a href="priser.html">priser</a> för detaljer.</p>
+            </article>
+            <article class="card">
+                <h3>Kan ni migrera min nuvarande webb?</h3>
+                <p>Ja, vi kan flytta över innehåll, sätta redirects och se till att SEO inte går förlorad.</p>
+            </article>
+            <article class="card">
+                <h3>Ingår SEO?</h3>
+                <p>Grundläggande teknisk SEO ingår alltid (title, meta, CWV). För mer avancerad optimering se <a href="seo-webbdesign.html">SEO & Prestanda</a>.</p>
+            </article>
+            <article class="card">
+                <h3>Ingår hosting och domän?</h3>
+                <p>Nej, men vi hjälper dig att välja och sätta upp. Kostnaden faktureras direkt från leverantören.</p>
+            </article>
+            <article class="card">
+                <h3>Har ni support/underhåll?</h3>
+                <p>Ja, vi erbjuder löpande underhåll från 690 kr/mån. Se <a href="priser.html">tillägg</a>.</p>
+            </article>
+            <article class="card">
+                <h3>Arbetar ni med offentliga uppdrag?</h3>
+                <p>Ja, vi bygger enligt WCAG AA och kan leverera till myndigheter och kommuner. Se <a href="tillganglighet.html">tillgänglighet</a>.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section>
+    <div class="container center">
+        <h2 class="section-title">Hittar du inte svaret?</h2>
+        <p class="lead">Skicka din fråga direkt till oss — vi svarar inom 24h.</p>
+        <p><a class="btn btn--primary" href="kontakt.html">Kontakta oss</a></p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container foot">
+        <p class="muted small">© <span id="year"></span> WebbBoost • Malmö</p>
+        <nav class="foot-nav">
+            <a href="priser.html">Priser</a>
+            <a href="seo-webbdesign.html">SEO & Prestanda</a>
+            <a href="tillganglighet.html">Tillgänglighet</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    // Meny + år
+    const toggler = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
+    if (toggler && menu) {
+      toggler.addEventListener('click', () => {
+        const open = menu.classList.toggle('is-open');
+        toggler.setAttribute('aria-expanded', String(open));
+      });
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

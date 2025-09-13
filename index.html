@@ -3,13 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Agaled Studio — Webbbyrå & Frontend</title>
-  <meta name="description" content="Agaled Studio är en modern webbbyrå som designar och utvecklar snabba, tillgängliga och konverterande webblösningar." />
+  <title> WebbBoost — Webbbyrå & Frontend</title>
+  <meta name="description" content="WebbBoost är en modern webbbyrå som designar och utvecklar snabba, tillgängliga och konverterande webblösningar." />
   <meta name="theme-color" content="#0b0f19" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
-  <meta property="og:title" content="Agaled Studio — Webbbyrå & Frontend" />
+  <meta property="og:title" content="WebbBoost — Webbbyrå & Frontend" />
   <meta property="og:description" content="Design & utveckling av webbar som känns premium och presterar." />
   <meta property="og:type" content="website" />
 
@@ -18,7 +17,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Agaled Studio",
+      "name": "WebbBoost",
       "url": "https://example.com",
       "logo": "https://example.com/logo.png",
       "sameAs": [],
@@ -30,6 +29,12 @@
       }]
     }
   </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <meta name="msapplication-TileImage" content="assets/favicon.png">
 </head>
 <body>
 
@@ -37,8 +42,7 @@
 <header class="topbar">
   <div class="container inner">
     <a href="index.html" class="logo">
-      <span class="badge" aria-hidden="true"></span>
-      <span class="logo-text">Agaled <b>Studio</b></span>
+      <img src="assets/logo.png" alt="WebbBoost Studio logotyp" class="logo-img">
     </a>
 
     <nav class="nav" id="nav">
@@ -100,6 +104,32 @@
   </div>
 </section>
 
+<!-- SOCIAL: Följ oss-ruta -->
+<div class="hero-social" role="complementary" aria-label="Följ oss på sociala medier">
+  <p class="social-lead">Följ oss på våra sociala medier</p>
+  <ul class="icons" role="list">
+    <li>
+      <a class="icon fb" href="https://www.facebook.com/DIN_SIDA" target="_blank" rel="noopener" aria-label="Facebook">
+        <!-- FB -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.9v-7H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.9h-2.33v7A10 10 0 0 0 22 12z"/></svg>
+      </a>
+    </li>
+    <li>
+      <a class="icon ig" href="https://www.instagram.com/DIN_SIDA" target="_blank" rel="noopener" aria-label="Instagram">
+        <!-- IG -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3zm5 3.5A5.5 5.5 0 1 0 17.5 13 5.51 5.51 0 0 0 12 7.5zm0 2A3.5 3.5 0 1 1 8.5 13 3.5 3.5 0 0 1 12 9.5zM18 6.8a1.1 1.1 0 1 0 1.1 1.1A1.1 1.1 0 0 0 18 6.8z"/></svg>
+      </a>
+    </li>
+    <li>
+      <a class="icon tt" href="https://www.tiktok.com/@DIN_SIDA" target="_blank" rel="noopener" aria-label="TikTok">
+        <!-- TikTok -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 8.4a7.4 7.4 0 0 1-4.1-1.3v7.21a5.71 5.71 0 1 1-5.71-5.71c.3 0 .59.03.88.08v2.31a3.4 3.4 0 1 0 2.4 3.26V2h2.17a7.4 7.4 0 0 0 4.36 4.06z"/></svg>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
 <!-- Tjänster -->
 <section id="tjanster">
   <div class="container">
@@ -143,23 +173,43 @@
 <!-- Case -->
 <section id="case">
   <div class="container">
-    <h2 class="section-title">Utvalda case</h2>
-    <div class="grid-3 projects">
-      <a class="project card" href="#" aria-label="Case 1">
-        <div class="thumb" aria-hidden="true">Case 1</div>
-        <div class="meta"><h3>E-handel som ökade konvertering +38%</h3><p class="muted">React • Headless • A/B</p></div>
-      </a>
-      <a class="project card" href="#" aria-label="Case 2">
-        <div class="thumb">Case 2</div>
-        <div class="meta"><h3>SaaS-landning med 99/100 performance</h3><p class="muted">Vite • Image opt • SEO</p></div>
-      </a>
-      <a class="project card" href="#" aria-label="Case 3">
-        <div class="thumb">Case 3</div>
-        <div class="meta"><h3>Kommunwebb med WCAG AA</h3><p class="muted">Designsystem • Audit</p></div>
-      </a>
+    <h2 class="section-title">Featured case</h2>
+    <div class="grid-2">
+      <div>
+        <h3>Åstorps Tandläkarcentrum</h3>
+        <p class="lead">Modern kliniksajt med fokus på enkel bokning, tydliga behandlingar och lokal SEO.</p>
+        <ul class="bullets">
+          <li>Snabb åtkomst till “Boka tid”</li>
+          <li>Responsiv & tillgänglig design</li>
+          <li>Optimerad för lokal söktrafik</li>
+        </ul>
+        <p style="margin-top:14px">
+          <a class="btn btn--primary" href="case.html#astorp">Se caset</a>
+          <a class="btn" href="https://astorptandlakarecentrum.se/" target="_blank" rel="noopener">Besök sajten</a>
+        </p>
+      </div>
+
+      <!-- Bild/mockup -->
+      <div class="card hero-card">
+        <div class="mock" aria-hidden="true">
+          <div class="mock-bar"></div>
+          <div class="mock-body">
+            <div class="mock-col">
+              <div class="mock-block"></div>
+              <div class="mock-block small"></div>
+              <div class="mock-block"></div>
+            </div>
+            <div class="mock-col">
+              <div class="mock-block tall"></div>
+            </div>
+          </div>
+        </div>
+        <p class="muted center">Boka tid i fokus • Tillgänglig navigering • Lokal SEO</p>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- Process -->
 <section id="process">
@@ -179,7 +229,7 @@
 <section id="om">
   <div class="container grid-2">
     <div>
-      <h2 class="section-title">Varför Agaled Studio?</h2>
+      <h2 class="section-title">Varför WebbBoost?</h2>
       <ul class="ticks">
         <li>Senior erfarenhet i små, snabba team</li>
         <li>Designsystem & komponentbibliotek för återanvändbarhet</li>
@@ -221,7 +271,7 @@
 
 <footer class="footer">
   <div class="container foot">
-    <p class="muted small">© <span id="year"></span> Agaled Studio • Stockholm</p>
+    <p class="muted small">© <span id="year"></span> WebbBoost • Malmö</p>
     <nav class="foot-nav">
       <a href="#tjanster">Tjänster</a>
       <a href="#case">Case</a>

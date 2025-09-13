@@ -41,7 +41,7 @@ h1,h2,h3{ margin:.5rem 0 }
 .nav{ display:flex; align-items:center; gap:1rem }
 .nav-toggle{ display:none; background:none; border:1px solid var(--edge); border-radius:10px; padding:.5rem .6rem; color:var(--fg) }
 .nav-menu{ display:flex; gap:1rem; list-style:none; padding:0; margin:0 }
-.nav-menu a{ padding:.5rem .7rem; border-radius:10px; color:var(--muted); text-decoration:none }
+.nav-menu a{ padding:.3rem .7rem; border-radius:10px; color:var(--muted); text-decoration:none }
 .nav-menu a:hover{ color:var(--fg); background:rgba(255,255,255,.06) }
 
 /* ====== Hero ====== */
@@ -106,7 +106,7 @@ input:focus, textarea:focus{ outline:2px solid transparent; box-shadow:0 0 0 3px
   .stats{ grid-template-columns:1fr 1fr 1fr }
   .nav-toggle{ display:inline-block }
   .nav-menu{ position:fixed; inset:64px 0 auto 0; background:var(--bg); border-bottom:1px solid var(--edge);
-             transform:translateY(-120%); transition:transform .2s ease; padding:10px var(--pad); flex-direction:column }
+             transform:translateY(-130%); transition:transform .2s ease; padding:10px var(--pad); flex-direction:column }
   .nav-menu.is-open{ transform:translateY(0) }
 }
 
@@ -114,3 +114,206 @@ input:focus, textarea:focus{ outline:2px solid transparent; box-shadow:0 0 0 3px
   .cards,.grid-3,.timeline,.stats{ grid-template-columns:1fr }
   .headline{ font-size:clamp(1.9rem, 8vw, 2.4rem) }
 }
+
+/* === Följ oss-ruta utan bakgrund === */
+.hero-social{
+  margin: 14px auto 0;
+  padding: 0;
+  text-align: center;
+  max-width: 340px;
+}
+.hero-social .social-lead{
+  font-size: 1rem;
+  margin: 0 0 10px;
+  color: var(--fg);
+}
+.hero-social .icons{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+.hero-social .icons li{ display: inline-block; }
+
+/* Ikonerna behåller samma runda knappar */
+.hero-social .icon{
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,.35);
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+.hero-social .icon svg{ width: 22px; height: 22px; }
+
+/* Varumärkesfärger */
+.hero-social .icon.fb{ background:#1877F2; }
+.hero-social .icon.ig{ background: radial-gradient(circle at 30% 30%, #feda75, #d62976 45%, #962fbf 65%, #4f5bd5); }
+.hero-social .icon.tt{ background:#000; }
+
+/* Hover-effekt */
+.hero-social .icon:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.45);
+  opacity: .95;
+}
+
+
+/* Varumärkesfärger */
+.hero-social .icon.fb{ background:#1877F2; }                     /* Facebook blå */
+.hero-social .icon.ig{ background: radial-gradient(circle at 30% 30%, #feda75, #d62976 45%, #962fbf 65%, #4f5bd5); } /* Instagram gradient */
+.hero-social .icon.tt{ background:#000; }                         /* TikTok svart */
+
+/* Hover-effekt */
+.hero-social .icon:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.45);
+  opacity: .95;
+}
+
+/* Responsiv marginal på små skärmar */
+@media (max-width: 480px){
+  .hero-social{ margin-top: 12px; }
+}
+
+
+
+
+
+/* === Färggladare overrides (KLISTRAS LÄNGST NER) === */
+
+/* Extra accenter att leka med */
+:root{
+  --accent1:#f97316;  /* orange */
+  --accent2:#e11d48;  /* cerise/rosa */
+  --accent3:#84cc16;  /* limegrön */
+  --accent4:#22d3ee;  /* turkos – matchar din brand2 */
+}
+
+/* 1) Rubriker får en snygg flerfärgad underline */
+.section-title{
+  position:relative;
+  padding-bottom:6px;
+}
+.section-title::after{
+  content:"";
+  position:absolute; left:0; bottom:0;
+  width:84px; height:3px;
+  border-radius:4px;
+  background:linear-gradient(90deg,var(--brand),var(--accent1),var(--accent2),var(--accent4));
+  box-shadow:0 0 10px rgba(34,211,238,.25);
+}
+
+/* 2) Länkar blir tydligare och mer lockande */
+a:hover{
+  text-decoration:none;
+  background-image:linear-gradient(90deg,var(--accent4),var(--accent1));
+  background-size:100% 2px;
+  background-position:0 100%;
+  background-repeat:no-repeat;
+}
+
+/* 3) Knappar – mer färg på hover + en sekundär variant om du vill använda den */
+.btn--primary{
+  background:linear-gradient(90deg,var(--brand) 0%, var(--brand2) 100%);
+  color:#fff;
+}
+.btn--primary:hover{
+  filter:saturate(1.15) brightness(1.05);
+  box-shadow:0 8px 22px rgba(34,211,238,.25);
+}
+.btn--secondary{
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:#fff;
+}
+
+/* 4) Cards – subtil färgkant och sken vid hover (ser lyxigare ut) */
+.card{
+  border:1px solid rgba(255,255,255,.04);
+  background:
+    linear-gradient(var(--card),var(--card)) padding-box,
+    linear-gradient(135deg, rgba(124,58,237,.35), rgba(34,211,238,.25)) border-box; /* brand -> turkos */
+}
+.card:hover{
+  box-shadow:0 12px 30px rgba(0,0,0,.45), 0 0 0 3px rgba(34,211,238,.15) inset;
+  transform:translateY(-3px);
+}
+
+/* 5) Projekt/thumbnail-ytor – mer färg */
+.thumb{
+  display:grid; place-items:center;
+  color:#fff; font-weight:600; letter-spacing:.3px;
+  background:linear-gradient(135deg,var(--brand2),var(--accent1),var(--accent2),var(--brand));
+  border-radius:var(--radius);
+  min-height:120px;
+}
+
+/* 6) Badges (små runda i logotyp/hero/timeline) – gör dem “glowiga” */
+.badge{
+  display:inline-block;
+  width:28px; height:28px; border-radius:999px;
+  background:linear-gradient(135deg,var(--brand),var(--accent1));
+  box-shadow:0 0 0 3px rgba(124,58,237,.25);
+}
+
+/* 7) Inputs – tydlig färgring på fokus */
+input, textarea, select{
+  background:var(--edge);
+  border:1px solid var(--edge);
+  color:var(--fg);
+  border-radius:12px;
+}
+input:focus, textarea:focus, select:focus{
+  outline:none;
+  border-color:var(--brand2);
+  box-shadow:0 0 0 3px rgba(34,211,238,.25);
+}
+
+/* 8) Hero – lite mer “pop” utan att byta stil helt */
+.hero{
+  background:
+    linear-gradient(135deg, rgba(20,28,51,.85), rgba(20,28,51,.85)),
+    radial-gradient(80rem 40rem at -20% -20%, rgba(124,58,237,.35), transparent 60%),
+    radial-gradient(60rem 38rem at 120% 20%, rgba(34,211,238,.25), transparent 60%),
+    radial-gradient(60rem 30rem at 50% 120%, rgba(233,69,96,.18), transparent 60%);
+  /* behåller din textfärg och spacing */
+}
+
+/* 9) Footer – tunn färglinje högst upp för att bryta det mörka */
+.footer{
+  position:relative;
+}
+.footer::before{
+  content:"";
+  position:absolute; left:0; top:0; width:100%; height:3px;
+  background:linear-gradient(90deg,var(--brand),var(--accent1),var(--accent2),var(--brand2));
+  opacity:.9;
+}
+
+/* 10) Socialikoner – lite extra glöd på hover (om du använder blocket) */
+.hero-social .icon:hover{
+  box-shadow:0 10px 22px rgba(0,0,0,.45), 0 0 0 4px rgba(34,211,238,.2);
+}
+
+/* 11) Timeline (om du använder .timeline) – färga siffror/badges */
+.timeline li span{
+  background:linear-gradient(135deg,var(--brand),var(--accent1));
+  color:#fff;
+  box-shadow:0 0 0 3px rgba(124,58,237,.25);
+}
+
+
+
+
+.logo-img {
+  height: 200px;      /* justera storlek */
+  width: auto;
+  display: block;
+}
+
+
+
+

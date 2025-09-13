@@ -3,20 +3,27 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Om oss — Agaled Studio | Webbbyrå & Ingenjörer inom datateknik</title>
-    <meta name="description" content="Vi är ett litet team av ingenjörer inom datateknik som designar och utvecklar snabba, tillgängliga och affärsdrivande webbar." />
+    <title>Om oss — WebbBoost</title>
+    <meta name="description" content="Vi är IT-ingenjörer som utvecklar hemsidor i WordPress eller med skräddarsydd kod. WebbBoost levererar moderna, snabba och anpassade webbplatser för företag i alla storlekar." />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <meta name="msapplication-TileImage" content="assets/favicon.png">
+
+
 </head>
 <body>
 
-<!-- HEADER (samma, men 'Om oss' aktiv) -->
+<!-- HEADER -->
 <header class="topbar">
     <div class="container inner">
         <a href="index.html" class="logo">
-            <span class="badge" aria-hidden="true"></span>
-            <span class="logo-text">Agaled <b>Studio</b></span>
+            <img src="assets/logo.png" alt="WebbBoost Studio logotyp" class="logo-img">
         </a>
+
         <nav class="nav" id="nav">
             <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
                 <span class="sr-only">Öppna meny</span>☰
@@ -35,113 +42,62 @@
 <!-- HERO -->
 <section class="hero">
     <div class="container">
-        <p class="eyebrow">Vilka vi är</p>
-        <h1 class="headline">Ingenjörer inom <span class="gradient">datateknik</span> som bygger webbar med effekt</h1>
-        <p class="lead">Vi kombinerar teknisk precision med vass design. Liten, snabb byrå — stort fokus på resultat.</p>
+        <p class="eyebrow">Om oss</p>
+        <h1 class="headline">Vi är <span class="gradient">WebbBoost</span></h1>
+        <p class="lead">IT-ingenjörer som brinner för webbutveckling och digital design.</p>
     </div>
 </section>
 
-<!-- MISSION + VÄRDERINGAR -->
-<section>
-    <div class="container grid-2">
-        <article class="card">
-            <h2 class="section-title">Vårt uppdrag</h2>
-            <p class="lead">Göra webben snabbare, tydligare och mer användbar — sida för sida.</p>
-            <ul class="bullets">
-                <li>Affärsmål först: konvertering, mätbarhet och tillväxt</li>
-                <li>Designsystem & komponenter för tempo och kvalitet</li>
-                <li>Prestanda & tillgänglighet som standard (CWV + WCAG)</li>
-            </ul>
-        </article>
-        <article class="card">
-            <h2 class="section-title">Våra värderingar</h2>
-            <ul class="bullets">
-                <li><strong>Enkelhet:</strong> skala bort det onödiga</li>
-                <li><strong>Transparens:</strong> öppet repo, tydliga leverabler</li>
-                <li><strong>Hastighet:</strong> snabba iterationer, små releaser</li>
-            </ul>
-            <p class="muted small">Vi tror på små team med stort ansvar. Mindre overhead — bättre resultat.</p>
-        </article>
-    </div>
-</section>
-
-<!-- TEAM (2 platser för bilder) -->
+<!-- INNEHÅLL -->
 <section>
     <div class="container">
-        <h2 class="section-title">Team</h2>
-        <p class="lead">Två ingenjörer inom datateknik som täcker både design och utveckling från strategi till produktion.</p>
-
-        <div class="grid-2">
-            <article class="card" style="display:grid; grid-template-columns:120px 1fr; gap:14px; align-items:center">
-                <img src="images/team-1.jpg" alt="Team-medlem 1" width="120" height="120" style="border-radius:14px; object-fit:cover; aspect-ratio:1/1">
-                <div>
-                    <h3>Teammedlem 1</h3>
-                    <p class="muted">Datateknik • UI/UX • Frontend</p>
-                    <p>Fokuserar på research, prototyper och pixelperfekt gränssnitt. Bygger design­system och säkrar tillgänglighet.</p>
-                </div>
-            </article>
-
-            <article class="card" style="display:grid; grid-template-columns:120px 1fr; gap:14px; align-items:center">
-                <img src="images/team-2.jpg" alt="Team-medlem 2" width="120" height="120" style="border-radius:14px; object-fit:cover; aspect-ratio:1/1">
-                <div>
-                    <h3>Teammedlem 2</h3>
-                    <p class="muted">Datateknik • Frontend • Prestanda/SEO</p>
-                    <p>Bygger snabba, robusta gränssnitt med fokus på Core Web Vitals, SEO och mätbarhet.</p>
-                </div>
-            </article>
-        </div>
-
-        <p class="muted small" style="margin-top:10px">Tips: lägg era porträtt i <code>/images/</code> och döp dem till <code>team-1.jpg</code> och <code>team-2.jpg</code>. Rek. storlek ~800×800 px.</p>
+        <h2 class="section-title">Vilka vi är</h2>
+        <p>
+            WebbBoost består av erfarna <strong>IT-ingenjörer</strong> med en bakgrund inom datateknik och mjukvaruutveckling.
+            Vi kombinerar teknisk expertis med känsla för design för att skapa webbplatser som är lika användarvänliga som de är kraftfulla.
+        </p>
+        <p>
+            Vi utvecklar hemsidor både i <strong>WordPress</strong> och med <strong>egen kod från grunden</strong>, beroende på vad som passar bäst för projektets behov.
+            WordPress är perfekt för företag som vill kunna uppdatera innehåll själva på ett enkelt sätt, medan skräddarsydd kod ger maximal flexibilitet, prestanda och möjlighet att bygga unika lösningar.
+        </p>
+        <p>
+            Vi tror på långsiktiga samarbeten och anpassar alltid våra lösningar efter kundens verksamhet och mål.
+            Oavsett om det handlar om en enkel företagssida, en avancerad e-handel eller en specialbyggd applikation så är vår filosofi densamma:
+            <em>vi levererar lösningar som fungerar, presterar och gör skillnad</em>.
+        </p>
     </div>
 </section>
 
-<!-- TEKNIK & ARBETSSÄTT -->
-<section>
-    <div class="container grid-2">
-        <article class="card">
-            <h2 class="section-title">Teknik</h2>
-            <ul class="bullets">
-                <li>Semantisk HTML, modern CSS och JS</li>
-                <li>Byggkedja som kan växlas upp (Vite/React vid behov)</li>
-                <li>Headless-alternativ (Sanity/Strapi) eller statiskt för max-hastighet</li>
-            </ul>
-        </article>
-        <article class="card">
-            <h2 class="section-title">Arbetssätt</h2>
-            <ul class="bullets">
-                <li>GitHub-flow: små branches → snabba releaser</li>
-                <li>Prestandabudget & mätning (Lighthouse 95+)</li>
-                <li>Kontinuerliga förbättringar efter lansering</li>
-            </ul>
-        </article>
-    </div>
-</section>
-
-<!-- METRIK / BEVIS -->
+<!-- FILOSOFI -->
 <section>
     <div class="container">
-        <h2 class="section-title">Vad vi brukar leverera</h2>
-        <div class="stats card">
-            <div><strong>95+</strong><span>Lighthouse</span></div>
-            <div><strong>-50%</strong><span>Laddtid</span></div>
-            <div><strong>200ms</strong><span>TTI kritiska vyer</span></div>
-        </div>
+        <h2 class="section-title">Vår filosofi</h2>
+        <p>
+            En hemsida ska inte bara se bra ut – den ska ge resultat. Därför arbetar vi alltid med:
+        </p>
+        <ul class="bullets">
+            <li><strong>Prestanda:</strong> Snabba laddtider och optimerad kod.</li>
+            <li><strong>SEO:</strong> Sökmotorvänlig struktur för att du ska hittas på Google.</li>
+            <li><strong>Användarvänlighet:</strong> Responsiv design som fungerar på alla enheter.</li>
+            <li><strong>Tillgänglighet:</strong> Byggd enligt WCAG så att alla kan använda din sida.</li>
+            <li><strong>Säkerhet:</strong> Regelbundna uppdateringar och moderna standarder.</li>
+        </ul>
     </div>
 </section>
 
 <!-- CTA -->
 <section>
     <div class="container center">
-        <h2 class="section-title">Låt oss prata om ert projekt</h2>
-        <p class="lead">Skicka en kort brief — vi återkommer med förslag och tidplan.</p>
+        <h2 class="section-title">Vill du veta mer?</h2>
+        <p class="lead">Kontakta oss för en kostnadsfri konsultation och offert. Vi berättar gärna mer om hur vi kan hjälpa just dig.</p>
         <p><a class="btn btn--primary" href="kontakt.html">Kontakta oss</a></p>
     </div>
 </section>
 
-<!-- FOOTER (samma) -->
+<!-- FOOTER -->
 <footer class="footer">
     <div class="container foot">
-        <p class="muted small">© <span id="year"></span> Agaled Studio • Stockholm</p>
+        <p class="muted small">© <span id="year"></span> WebbBoost • Stockholm</p>
         <nav class="foot-nav">
             <a href="priser.html">Priser</a>
             <a href="seo-webbdesign.html">SEO & Prestanda</a>

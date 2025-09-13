@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tillgänglighet — WebbBoost | WCAG & inkluderande webb</title>
+  <meta name="description" content="Vi bygger webbar enligt WCAG AA och inkluderande designprinciper. Fokus på tillgänglighet, användbarhet och lagkrav för digitala tjänster." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <meta name="msapplication-TileImage" content="assets/favicon.png">
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="topbar">
+  <div class="container inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo.png" alt="WebbBoost Studio logotyp" class="logo-img">
+    </a>
+
+    <nav class="nav" id="nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Öppna meny</span>☰
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="tjanster.html">Tjänster</a></li>
+        <li><a href="case.html">Case</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="om-oss.html">Om oss</a></li>
+        <li><a href="kontakt.html" class="btn btn--small btn--primary">Begär offert</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Tillgänglighet</p>
+    <h1 class="headline">Webbar som är <span class="gradient">för alla</span></h1>
+    <p class="lead">Vi följer WCAG 2.1 AA och designar för alla användare — oavsett funktionsvariation, enhet eller nät.</p>
+  </div>
+</section>
+
+<!-- VAD & VARFÖR -->
+<section>
+  <div class="container grid-2">
+    <article class="card">
+      <h2 class="section-title">Varför tillgänglighet?</h2>
+      <p class="lead">En inkluderande webb är inte bara ett lagkrav — den ger bättre UX, SEO och konvertering.</p>
+      <ul class="bullets">
+        <li>WCAG 2.1 AA enligt DOS-lagen</li>
+        <li>Fungerar på skärmläsare & tangentbord</li>
+        <li>Bättre kontraster & begripligt språk</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h2 class="section-title">Vad vi gör</h2>
+      <ul class="bullets">
+        <li>Audit enligt WCAG-checklista</li>
+        <li>Korrigering av kod & design</li>
+        <li>Rapport + rekommendationer</li>
+        <li>Utbildning i inkluderande design</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- PRINCIPER -->
+<section>
+  <div class="container">
+    <h2 class="section-title">WCAG-principerna</h2>
+    <div class="grid-4">
+      <article class="card"><h3>Perceivable</h3><p>Allt innehåll går att uppfatta — textalternativ, kontrast, responsivitet.</p></article>
+      <article class="card"><h3>Operable</h3><p>Navigerbar via tangentbord, tydliga fokusmarkörer och förutsägbart beteende.</p></article>
+      <article class="card"><h3>Understandable</h3><p>Klara rubriker, begripligt språk, konsekvent interaktion.</p></article>
+      <article class="card"><h3>Robust</h3><p>Kod som fungerar med olika hjälpmedel, webbläsare och framtida teknik.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- CASE / EXEMPEL -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Exempel från projekt</h2>
+    <div class="grid-2">
+      <article class="card">
+        <h3>Kommunwebb</h3>
+        <p class="muted">Audit & förbättring → WCAG AA</p>
+        <ul class="bullets">
+          <li>Fokusmarkörer & semantisk struktur</li>
+          <li>Kontraster & tillgängliga formulär</li>
+          <li>Rapport & utbildning till redaktörer</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>E-handel</h3>
+        <p class="muted">Checkout som fungerar för alla</p>
+        <ul class="bullets">
+          <li>Skärmläsarvänlig kassa</li>
+          <li>Tydliga felmeddelanden</li>
+          <li>Optimerad navigering & etiketter</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="container center">
+    <h2 class="section-title">Vill du ha en tillgänglighets­granskning?</h2>
+    <p class="lead">Vi går igenom din webb, identifierar hinder och föreslår förbättringar.</p>
+    <p><a class="btn btn--primary" href="kontakt.html">Begär audit</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container foot">
+    <p class="muted small">© <span id="year"></span> WebbBoost • Stockholm</p>
+    <nav class="foot-nav">
+      <a href="priser.html">Priser</a>
+      <a href="seo-webbdesign.html">SEO & Prestanda</a>
+      <a href="tillganglighet.html">Tillgänglighet</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Meny + år
+  const toggler = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.nav-menu');
+  if (toggler && menu) {
+    toggler.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      toggler.setAttribute('aria-expanded', String(open));
+    });
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
