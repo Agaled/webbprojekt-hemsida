@@ -1,0 +1,6 @@
+# Tillåt alla sökmotorer att indexera allt innehåll
+User-agent: *
+Allow: /
+
+# Länka till sitemap
+Sitemap: https://wdbsstudio.se/sitemap.xml

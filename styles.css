@@ -323,7 +323,288 @@ html { color-scheme: dark; } /* bättre formulär/scrollbars i mörkt läge */
   }
 }
 
+a[href^="tel"] {
+  color: var(--fg);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a[href^="tel"].btn {
+  background: var(--primary);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+a[href^="tel"].btn:hover {
+  background: var(--primary-hover, #0056b3);
+}
 
 
+/* Telefonknapp */
+.btn--secondary {
+  background: linear-gradient(90deg, var(--brand2), var(--brand));
+  color:#fff;
+}
+.btn--secondary:hover {
+  filter: brightness(1.1);
+}
+
+
+
+/* Visas bara på desktop */
+.only-desktop { display: none; }
+@media (min-width: 1024px){
+  .only-desktop { display: block; }
+}
+
+/* Diskret “ghost”-knapp för telefonnumret */
+.btn--ghost{
+  display:inline-flex; align-items:center;
+  padding:8px 12px;
+  border:1px solid var(--edge);
+  border-radius:12px;
+  background:transparent;
+  color:var(--fg);
+  font-weight:600;
+  transition:background .15s ease, border-color .15s ease, color .15s ease;
+}
+.btn--ghost:hover{
+  background:rgba(255,255,255,.06);
+  border-color:var(--brand2);
+  color:#fff;
+}
+
+/* Se till att nav-länkar inte “hoppar” i höjd */
+.nav-menu li a.btn--ghost,
+.nav-menu li a.btn.btn--small{ line-height:1; }
+
+
+.contact-direct a {
+  color: var(--brand2);
+  font-weight: 600;
+  text-decoration: none;
+}
+.contact-direct a:hover {
+  text-decoration: underline;
+}
+.contact-direct p {
+  margin: 6px 0;
+  font-size: 1.1rem;
+}
+
+/* === Toast (popup) === */
+.toast{
+  position: fixed;
+  right: 20px; bottom: 22px;
+  background: #16a34a;           /* grön */
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  display: flex; gap: 10px; align-items: center;
+  max-width: min(92vw, 420px);
+  z-index: 9999;
+
+  opacity: 0; transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+}
+.toast.is-visible{
+  opacity: 1; transform: translateY(0);
+  pointer-events: auto;
+}
+.toast.toast--error{ background:#ef4444; }   /* röd vid fel */
+
+.toast-close{
+  background: transparent; border: none; color:#fff;
+  font-size: 16px; cursor: pointer; line-height: 1;
+  opacity: .9;
+}
+.toast-close:hover{ opacity: 1; }
+
+
+/* === Modal toast (centrerad bekräftelse) === */
+.modal-toast{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+.modal-toast.is-visible{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-toast__box{
+  background: #16a34a; /* grön bakgrund */
+  color: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 14px 32px rgba(0,0,0,.45);
+  animation: popIn .25s ease;
+}
+.modal-toast__box p{
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+@keyframes popIn{
+  from{ transform: scale(.9); opacity: 0; }
+  to{ transform: scale(1); opacity: 1; }
+}
+
+/* Röd variant om du vill använda vid fel */
+.modal-toast__box.error{
+  background: #dc2626; /* röd bakgrund */
+}
+
+/* Modal – ska INTE blockera klick när den är gömd */
+.modal-toast{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.6);
+  z-index: 9999;
+
+  opacity: 0;
+  pointer-events: none;        /* <- släpper igenom klick när gömd */
+  transition: opacity .25s ease;
+}
+
+.modal-toast.is-visible{
+  opacity: 1;
+  pointer-events: auto;        /* <- fånga klick när den visas */
+}
+
+/* Själva rutan (behåll gärna din befintliga stil) */
+.modal-toast__box{
+  background: #16a34a;
+  color:#fff;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 14px 32px rgba(0,0,0,.45);
+}
+
+/* 1) Stäng av horisontell rullning helt */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;      /* fallback */
+}
+
+/* 2) Klipp allt som ändå råkar sticka ut i sektioner/topbar/footer */
+header, .topbar, section, footer, .container, .wrap {
+  overflow-x: clip;        /* modern, utan scroll */
+}
+
+/* 3) Media får aldrig bli bredare än viewport */
+img, svg, video, canvas, iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 4) Vanlig bov: element som använder 100vw skapar overflow pga scrollbar.
+   Om du använder .fullwidth / .hero etc, tvinga dem till 100% istället. */
+.fullwidth, .hero, .hero-content, .band, .strip {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 5) Box-shadow/glow som ligger utanför kan trigga scroll – klipp dem. */
+.hero, .card, .mock, .shadow, .glow {
+  overflow: clip;
+}
+
+/* 6) Säkerställ att alla element räknar padding i bredd */
+*, *::before, *::after { box-sizing: border-box; }
+
+
+/* === Footer fix för små skärmar === */
+footer {
+  text-align: center;              /* centrera all text i footern */
+  line-height: 1.6;
+  padding: 20px 10px;
+}
+
+footer .footer-inner {
+  display: flex;
+  flex-direction: column;          /* stapla på mobil */
+  align-items: center;
+  gap: 8px;
+}
+
+/* Gör så att årtal + företagsnamn + ort håller ihop */
+footer .footer-brand {
+  white-space: nowrap;             /* inget radbryt mitt i */
+  font-weight: 600;
+}
+
+/* Telefonnummer också tydligt */
+footer .footer-phone {
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* Footer text på en rad */
+.footer .foot{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.footer-line{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  white-space: nowrap;
+  font-weight:600;
+  font-size: clamp(11px, 2.9vw, 16px);
+  line-height: 1.6;
+  text-align:center;
+}
+
+/* Klickbar telefonlänk */
+.footer-phone{
+  color: var(--brand2, #16a34a);
+  text-decoration: none;
+  font-weight:700;
+}
+.footer-phone:hover{
+  text-decoration: underline;
+}
+
+.footer-line .sep{ opacity:.65; }
+
+
+/* === FIX: Låt navigationen inte klippas === */
+header,
+.topbar,
+.topbar .inner,
+nav,
+.nav {
+  overflow: visible !important;   /* dropdownen får sticka ut */
+}
+
+/* Se till att menyn ligger över resten */
+.topbar { position: relative; z-index: 2000; }
+.nav-menu { z-index: 3000; }
+.nav-toggle { z-index: 3100; } /* knappen över panelen */
+
+/* (Om du har en regel som satte overflow-x: clip på header/topbar, denna vinner nu) */
 
 

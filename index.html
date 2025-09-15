@@ -47,16 +47,21 @@
 
     <nav class="nav" id="nav">
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-        <span class="sr-only">Öppna meny</span>
-        ☰
+        <span class="sr-only">Öppna meny</span> ☰
       </button>
       <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Hem</a></li>
         <li><a href="tjanster.html">Tjänster</a></li>
         <li><a href="case.html">Case</a></li>
         <li><a href="process.html">Process</a></li>
         <li><a href="om-oss.html">Om oss</a></li>
+
+
+
+        <!-- Primär CTA alltid sist -->
         <li><a href="kontakt.html" class="btn btn--small btn--primary">Begär offert</a></li>
       </ul>
+
     </nav>
   </div>
 </header>
@@ -74,8 +79,9 @@
         Vi designar och utvecklar moderna webbar med fokus på affärsmål, SEO, tillgänglighet och prestanda.
       </p>
       <div class="cta">
-        <a class="btn btn--primary" href="#kontakt">Starta projekt</a>
+        <a class="btn btn--primary" href="kontakt.html">Starta projekt</a>
         <a class="btn" href="#case">Se våra case</a>
+        <a href="tel:0735204186" class="btn btn--primary">📞 Ring oss direkt: 073-520 41 86</a>
       </div>
 
       <ul class="trust">
@@ -245,42 +251,18 @@
   </div>
 </section>
 
-<!-- Kontakt -->
-<section id="kontakt">
-  <div class="container">
-    <h2 class="section-title">Berätta om ditt projekt</h2>
-    <form class="card form" name="kontakt" method="post" data-netlify="true">
-      <div class="grid-2">
-        <div>
-          <label for="namn">Namn</label>
-          <input id="namn" name="namn" required />
-        </div>
-        <div>
-          <label for="epost">E-post</label>
-          <input id="epost" type="email" name="epost" required />
-        </div>
-      </div>
-      <div>
-        <label for="meddelande">Beskriv uppdraget</label>
-        <textarea id="meddelande" name="meddelande" rows="5" placeholder="Budget, tidplan, mål..."></textarea>
-      </div>
-      <button class="btn btn--primary" type="submit">Skicka förfrågan</button>
-    </form>
-    <p class="center muted small">Eller maila: <a href="mailto:hello@example.com">hello@example.com</a></p>
-  </div>
-</section>
+
 
 <footer class="footer">
   <div class="container foot">
-    <p class="muted small">© <span id="year"></span> WDBS • Malmö</p>
-    <nav class="foot-nav">
-      <a href="#tjanster">Tjänster</a>
-      <a href="#case">Case</a>
-      <a href="#process">Process</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
+    <p class="footer-line">
+      <a href="tel:0735204186" class="footer-phone">📞&nbsp;073-520&nbsp;41&nbsp;86</a>
+      <span class="sep">•</span>
+      <span class="footer-brand">©&nbsp;2025&nbsp;WDBS&nbsp;–&nbsp;Malmö</span>
+    </p>
   </div>
 </footer>
+
 
 <script>
   // Mobilt meny-toggle

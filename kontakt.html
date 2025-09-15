@@ -14,9 +14,11 @@
   <meta name="msapplication-TileImage" content="assets/favicon.png">
 
 </head>
+
+
 <body>
 
-<!-- HEADER (samma, men 'Kontakt' aktiv) -->
+<!-- Topbar -->
 <header class="topbar">
   <div class="container inner">
     <a href="index.html" class="logo">
@@ -25,15 +27,21 @@
 
     <nav class="nav" id="nav">
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-        <span class="sr-only">Öppna meny</span>☰
+        <span class="sr-only">Öppna meny</span> ☰
       </button>
       <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Hem</a></li>
         <li><a href="tjanster.html">Tjänster</a></li>
         <li><a href="case.html">Case</a></li>
         <li><a href="process.html">Process</a></li>
         <li><a href="om-oss.html">Om oss</a></li>
-        <li><a href="kontakt.html" class="btn btn--small btn--primary active">Begär offert</a></li>
+
+
+
+        <!-- Primär CTA alltid sist -->
+        <li><a href="kontakt.html" class="btn btn--small btn--primary">Begär offert</a></li>
       </ul>
+
     </nav>
   </div>
 </header>
@@ -52,7 +60,7 @@
   <div class="container">
     <div class="card form">
       <!-- Byt e-postadressen nedan till din -->
-      <form id="kontaktForm" action="mailto:AghiedJalbout@gmail.com" method="post" enctype="text/plain">
+      <form id="kontaktForm" action="https://formspree.io/f/mrbadnwk" method="POST">
         <div class="grid-2">
           <div>
             <label for="namn">Namn</label>
@@ -96,11 +104,22 @@
           </div>
         </div>
 
+        <!-- DOLDA FÄLT (ämne, projekt, honeypot, reply-to) -->
+        <input type="hidden" name="_subject" value="Kontakt via webbdesignboost.se" />
+        <input type="hidden" name="project" value="webbdesignboost" />
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
         <button class="btn btn--primary" type="submit">Skicka förfrågan</button>
+
+        <!-- Feedback-meddelanden -->
+        <p id="formSuccess" class="muted" style="display:none;margin-top:10px;">Tack! Ditt meddelande har skickats. Vi hör av oss snart.</p>
+        <p id="formError" class="muted" style="display:none;margin-top:10px;color:#ffb4b4;">Oj! Något gick fel. Testa igen eller mejla oss på <a href="mailto:info@webbdesignboost.se">info@webbdesignboost.se</a>.</p>
       </form>
-      <p class="muted small" style="margin-top:10px">
-        Eller maila oss direkt: <a href="mailto:AghiedJalbout@gmail.com">AghiedJalbout@gmail.com</a>
-      </p>
+
+      <div class="contact-direct" style="margin-top:20px; text-align:center;">
+        <p><strong>📞 Ring oss direkt:</strong> <a href="tel:0735204186">073-520 41 86</a></p>
+        <p><strong>✉️ Maila oss:</strong> <a href="mailto:info@wdbsstudio.se">info@wdbsstudio.se</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -135,32 +154,97 @@
   </div>
 </footer>
 
+<!-- Modal-bekräftelse -->
+<div id="toast" class="modal-toast" role="alert" aria-live="polite" aria-atomic="true">
+  <div class="modal-toast__box">
+    <p id="toastText">Tack! Ditt meddelande har skickats. Vi hör av oss snart.</p>
+    <button id="toastClose" class="btn btn--primary" aria-label="Stäng">OK</button>
+  </div>
+</div>
+
 <script>
-  // Meny + år
+  (function () {
+    const form = document.getElementById('kontaktForm');
+    if (!form) return;
+
+    const btn = form.querySelector('button[type="submit"]');
+
+    // Toast helpers
+    const toast = document.getElementById('toast');
+    const toastText = document.getElementById('toastText');
+    const toastClose = document.getElementById('toastClose');
+    let toastTimer;
+
+    function showToast(message, isError=false){
+      toast.classList.remove('toast--error', 'is-visible');
+      if (isError) toast.classList.add('toast--error');
+      toastText.textContent = message;
+      requestAnimationFrame(()=> toast.classList.add('is-visible'));
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(hideToast, 4500);
+    }
+    function hideToast(){ toast.classList.remove('is-visible'); }
+    toastClose.addEventListener('click', hideToast);
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // <- stoppar redirect till action (Formspree)
+
+      // Enkel validering
+      const must = ['namn','epost','beskrivning'];
+      for (const id of must){
+        const el = document.getElementById(id);
+        if (!el || !el.value.trim()){
+          el && el.focus();
+          showToast('Fyll i alla obligatoriska fält.', true);
+          return;
+        }
+      }
+
+      if (btn){ btn.disabled = true; btn.textContent = 'Skickar...'; }
+
+      try {
+        const data = new FormData(form);
+        const emailInput = document.getElementById('epost');
+        if (emailInput && emailInput.value) data.append('_replyto', emailInput.value);
+
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok){
+          form.reset();
+          showToast('Tack! Ditt meddelande har skickats. Vi hör av oss snart.');
+        } else {
+          showToast('Oj! Något gick fel. Försök igen eller mejla oss.', true);
+        }
+      } catch {
+        showToast('Tekniskt fel. Testa igen eller mejla oss.', true);
+      } finally {
+        if (btn){ btn.disabled = false; btn.textContent = 'Skicka förfrågan'; }
+      }
+    });
+  })();
+</script>
+
+<script>
+  // Mobilmeny: samma logik som på index.html
   const toggler = document.querySelector('.nav-toggle');
-  const menu = document.querySelector('.nav-menu');
+  const menu = document.getElementById('nav-menu');
+
   if (toggler && menu) {
     toggler.addEventListener('click', () => {
       const open = menu.classList.toggle('is-open');
       toggler.setAttribute('aria-expanded', String(open));
     });
   }
-  document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Enkel validering (klient) innan mailto triggas
-  document.getElementById('kontaktForm').addEventListener('submit', function(e){
-    const required = ['namn','epost','beskrivning'];
-    for (const id of required){
-      const el = document.getElementById(id);
-      if (!el.value.trim()){
-        e.preventDefault();
-        alert('Fyll i alla obligatoriska fält.');
-        el.focus();
-        return false;
-      }
-    }
-    // Tips: byt action till din riktiga e-post ovan.
-  });
+  // Årtal i footern
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
 </script>
+
+
 </body>
 </html>
