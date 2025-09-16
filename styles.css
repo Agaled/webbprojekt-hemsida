@@ -114,6 +114,74 @@ input:focus, textarea:focus{ outline:2px solid transparent; box-shadow:0 0 0 3px
   .cards,.grid-3,.timeline,.stats{ grid-template-columns:1fr }
   .headline{ font-size:clamp(1.9rem, 8vw, 2.4rem) }
 }
+/* ====== Lighten theme overrides (paste at end) ====== */
+:root{
+  /* Ljusare mörkt tema (~20–25% ljusare) */
+  --bg:#131a2b;        /* var #0b0f19 */
+  --fg:#f2f6fb;        /* var #e8eef7 */
+  --muted:#a9b4c8;     /* var #96a3b8 */
+  --card:#182345;      /* var #0f1629 */
+  --edge:#2b3a60;      /* var #1f2a44 */
+  --shadow:0 12px 30px rgba(12, 32, 100, .28); /* lite mjukare skugga */
+  /* behåll varumärkesfärgerna men du kan öka kontrasten om du vill: */
+  /* --brand:#7c3aed; --brand2:#22d3ee; */
+}
+
+/* Gör topbaren något ljusare (den använder fasta RGBA i din CSS) */
+.topbar{
+  background:linear-gradient(180deg, rgba(19,26,43,.78), rgba(19,26,43,.48));
+  border-bottom-color: var(--edge);
+}
+
+/* Ljusare fönsterlist på mockup-kortet (hade hårdkodade färger) */
+.mock-bar{
+  background:linear-gradient(180deg, #283763, #1a2542); /* var #1b2440 → #121a30 */
+  border-bottom:1px solid var(--edge);
+}
+
+/* Öka lätthetskänslan i hover-states mot mörk bakgrund */
+.nav-menu a:hover{ background:rgba(255,255,255,.10); color:var(--fg) }
+
+/* Gör knapparnas toppglans lite tydligare (syns bättre på ljusare mörk) */
+.btn{ background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,0)); }
+
+/* Ge “block”-demo-elementen lite mer lyster */
+.mock-block{ background:linear-gradient(90deg, rgba(124,58,237,.45), rgba(34,211,238,.35)); }
+
+/* Stats-kort och liknande: aningen tydligare paneler */
+.stats > div{
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0));
+  border-color:var(--edge);
+}
+
+
+.topbar{
+  backdrop-filter:saturate(180%) blur(12px);
+  background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
+  border-bottom-color:var(--edge);
+}
+.nav-menu a{ color:var(--muted) }
+.nav-menu a:hover{ background:rgba(0,0,0,.04); color:var(--fg) }
+.mock-bar{ background:linear-gradient(180deg, #eef2f8, #e6ecf6); border-bottom:1px solid var(--edge); }
+.btn{ background:linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.2)); border-color:var(--edge) }
+
+
+
+
+/* gör topbaren ett snäpp mer definierad mot den mörkare bakgrunden */
+.topbar{
+  background:linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.58));
+  border-bottom-color:var(--edge);
+}
+
+/* öka hover-kontrasten lite i ljusläget */
+.nav-menu a:hover{ background:rgba(0,0,0,.06); color:var(--fg) }
+
+/* mock-fönsterlisten följer den något mörkare tonen */
+.mock-bar{
+  background:linear-gradient(180deg, #e8eef7, #dee7f3);
+  border-bottom:1px solid var(--edge);
+}
 
 /* === Följ oss-ruta utan bakgrund === */
 .hero-social{
@@ -179,6 +247,125 @@ input:focus, textarea:focus{ outline:2px solid transparent; box-shadow:0 0 0 3px
   .hero-social{ margin-top: 12px; }
 }
 
+/* === Contrast fix for light header/logo text === */
+.topbar,
+.topbar * { color: inherit; } /* nollställ ev. hårdkodade färger */
+
+.topbar .logo,
+.topbar .logo b,
+.topbar .logo a {
+  color: #0b1220;                 /* mörk text på ljus topbar */
+}
+
+.topbar .logo small,
+.topbar .logo .tagline,
+.topbar .logo .sub,
+.topbar .muted,
+.topbar .nav-menu a {
+  color: #4b5a72;                 /* sekundär textlänk */
+}
+
+.topbar .nav-menu a:hover {
+  background: rgba(0,0,0,.06);
+  color: #0b1220;
+}
+
+/* Om texten under WDBS råkar vara hårdkodad till #fff */
+.topbar :is(span,small,em,strong,a).on-light,
+.topbar :is(span,small,em,strong,a)[style*="color:#fff"],
+.topbar :is(span,small,em,strong,a)[style*="color: rgb(255, 255, 255)"]{
+  color:#0b1220 !important;
+}
+
+/* === Dark-Reader style overrides (paste at very end) === */
+:root{
+  --bg:#0b1220;        /* djup midnatt */
+  --fg:#e7eef7;        /* ljus text */
+  --muted:#9fb0cd;     /* sekundär text */
+  --card:#0f1629;      /* mörka kort/paneler */
+  --edge:#1f2a44;      /* diskret kant */
+  --shadow:0 14px 40px rgba(0,0,0,.45);
+  /* behåll brandfärgerna */
+  /* --brand:#7c3aed; --brand2:#22d3ee; */
+}
+
+/* Topbar – mörk, lätt transparent */
+.topbar{
+  background:linear-gradient(180deg, rgba(9,14,26,.90), rgba(9,14,26,.70));
+  border-bottom:1px solid var(--edge);
+}
+
+/* Hero – mörk bas + subtila purple/teal glows */
+.hero{
+  background:
+          radial-gradient(1200px 600px at 22% 20%, rgba(124,58,237,.22), transparent 60%),
+          radial-gradient(1200px 600px at 78% 20%, rgba(34,211,238,.18), transparent 60%),
+          linear-gradient(180deg, #0b1220 0%, #0a1528 100%);
+}
+
+/* Läsbar brödtext i heron */
+.hero .lead{ color:#c9d5e8; }
+
+/* Navigation – tydligare kontrast */
+.nav-menu a{ color:#9fb0cd; }
+.nav-menu a:hover{ color:var(--fg); background:rgba(255,255,255,.06); }
+
+/* Mock-fönster */
+.mock{ background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); }
+.mock-bar{
+  background:linear-gradient(180deg, #121a30, #0b1324);
+  border-bottom:1px solid var(--edge);
+}
+.mock-block{
+  background:linear-gradient(135deg, rgba(124,58,237,.60), rgba(34,211,238,.45));
+  border-radius:10px;
+}
+
+/* Etiketter i mock-rutor – mörka pills (som i din högra bild) */
+.mock-block{ position:relative; }
+.mock-block::after{
+  content: attr(data-label);
+  position:absolute; left:10px; bottom:10px;
+  padding:6px 10px;
+  font-size:.9rem; font-weight:600; letter-spacing:.3px;
+  color:#fff;
+  background:rgba(0,0,0,.45);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:10px;
+  box-shadow:0 6px 16px rgba(0,0,0,.35);
+  text-shadow:0 1px 2px rgba(0,0,0,.6);
+  pointer-events:none;
+}
+
+/* Cards / stats – mörkare och med lite glow vid hover */
+.card{ background:var(--card); border:1px solid var(--edge); box-shadow:var(--shadow); }
+.project:hover{ box-shadow:0 16px 60px rgba(34,211,238,.12); }
+
+/* Knappar – behåll primär gradient, förstärk hover lite */
+.btn--primary:hover{ filter:saturate(1.1) brightness(1.05); box-shadow:0 8px 22px rgba(34,211,238,.25); }
+
+/* Footer – mörk, tydlig kant */
+.footer{ border-top:1px solid var(--edge); color:var(--muted); }
+
+/* Inputs – mörka fält med tydlig fokusring */
+input, textarea{
+  background:#0e1729;
+  border:1px solid var(--edge);
+  color:var(--fg);
+}
+input:focus, textarea:focus{
+  outline:none;
+  box-shadow:0 0 0 3px rgba(34,211,238,.25);
+  border-color:var(--brand2);
+}
+/* Nav: gör länkarna vita */
+.topbar .nav-menu a {
+  color: #fff !important;
+}
+.topbar .nav-menu a:hover {
+  color: #fff !important;
+  background: rgba(255,255,255,.12);
+}
 
 
 
